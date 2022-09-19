@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info</title>
+    <style>
+     body{
+        background: lightblue;
+     }
+     .info {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+     .contact-form{
+        max-width:350px;
+        margin:auto;
+        background:#06bb72;
+        padding:40px;
+        border-radius: 20px;
+     }
+     input[type=text], select{
+        width:100%;
+        padding:12px 20px;
+        margin:8px;
+        display: inline-block;
+        border:1px solid #ccc;
+        border-radius:8px;
+        box-sizing: border-box;
+     }
+
+     #submit{
+        width:100%;
+        padding:12px 20px;
+        margin:8px;
+        display: inline-block;
+        border:1px solid #ccc;
+        border-radius:4px;
+        box-sizing: border-box;
+        width:100%;
+        background:rgb(13, 107, 166);
+        color:white;
+        padding:14px 20px;
+        margin:8px 0;
+        border:none;
+        border-radius:4px;
+        cursor:pointer;
+        text-align: center;
+        text-decoration: none;
+
+     }
+       
+     
+     #submit:hover{
+         text-decoration: none; 
+        background:#000;
+     }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <div class="contact-form" padding-top:40px;>
+            <form>
+                <h1 for="name">Describe your Parcel</h1>
+    
+                <label for ="size">Select the Size (in feets) </label>
+                <select id="size">
+                    <option value ="size">--Select the Size--</option>
+                    <option value ="size">Upto 2x2</option>
+                    <option value ="size">Upto 4x4</option>
+                    <option value ="size">Upto 5x5</option>
+                </select>
+                <label for ="type"> Select the Type</label>
+                <select id="type">
+                    <option value ="type">--Select the Type--</option>
+                    <option value ="type">Delicate</option>
+                    <option value ="type">Durable</option>
+                </select>
+                <label for ="weight">Select the Weight (in Kgs)</label>
+                <select id="weight">
+                    <option value ="weight">--Select the Weight--</option>
+                    <option value ="weight">Upto 2  Kg</option>
+                    <option value ="weight">Upto 5  Kg</option>
+                    <option value ="weight">Upto 10 Kg</option>
+                    <option value ="weight">Upto 15 Kg</option>
+                </select>
+                    <a id="submit" href="location.html" 
+                        onclick="submitForm()" > Submit</a>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        const form=document.getElementById('form');
+        const size = document.getElementById('size');
+        const type = document.getElementById('type');
+        const weight = document.getElementById('weight');
+    
+        form.addEventListner('submit', function(e){
+            e.preventDefault();
+
+            const sizeValue =size.value;
+            const typeValue = type.value;
+            const weightValue =weight.value;
+
+            localStorage.setItem('size', sizeValue);
+            localStorage.setItem('type', typeValue);
+            localStorage.setItem('weight', weightValue);
+
+            window.location.href = "dialog.html";
+        })
+    </script>
+    
+</body>
+</html>

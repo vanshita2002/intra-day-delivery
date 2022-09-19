@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dialog box</title>
+    <style>
+        #pay{
+        width:100%;
+        padding:12px 20px;
+        margin:8px;
+        /* display: inline-block; */
+        border:1px solid #ccc;
+        border-radius:4px;
+        box-sizing: border-box;
+        width:100%;
+        background:rgb(13, 107, 166);
+        color:white;
+        padding:14px 20px;
+        margin:8px 0;
+        border:none;
+        border-radius:4px;
+        cursor:pointer;
+        text-align: center;
+        text-decoration: none;
+
+     }
+       
+     
+     #pay:hover{
+         text-decoration: none; 
+        background:#000;
+     }
+    </style>
+</head>
+<body>
+    <div>Type : <span id="type"></span></div>
+    <div>Size : <span id="size"></span></div>
+    <div>Weight : <span id="weight"></span></div>
+    <div>Your location : <span id="sl"></span></div>
+    <div>Your Contact No. : <span id="sc"></span></div>
+    <div>Receiver's location : <span id="rl"></span></div>
+    <div>Receiver's Contact No. : <span id="rc"></span></div><br>
+
+    <a id="pay" href="payment.html"
+            onclick="payForm()" > Pay</a>
+
+<script>
+    const type = localStorage.getItem('size');
+    const size = localStorage.getItem('size');
+    const weight= localStorage.getItem('weight');
+    const sl = localStorage.getItem('sl');
+    const sc= localStorage.getItem('sc');
+    const rl= localStorage.getItem('rl');
+    const rc= localStorage.getItem('rc');
+
+    document.getElementById('type').textContent= type;
+    document.getElementById('size').textContent= size;
+    document.getElementById('weight').textContent= weight;
+    document.getElementById('sl').textContent= sl;
+    document.getElementById('sc').textContent= sc;
+    document.getElementById('rl').textContent= rl;
+    document.getElementById('rc').textContent= rc;
+
+</script>
+</body>
+</html>
